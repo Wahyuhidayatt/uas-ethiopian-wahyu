@@ -4,7 +4,7 @@ import axios from 'axios'
 Vue.use(Vuex)
 
 const initialState = {
-      Articles : [],
+      articles : [],
       newArticle : {
        title : '',
        content : '',
@@ -16,3 +16,32 @@ const initialState = {
       _author : ''
     }
    }
+export default new Vuex.Store ({
+  state: {...initialState},
+  mutations : {
+    POST_ARTICLE(state, payload){
+      state.articles.push(payload)
+      state.newArticle = {
+       title : '',
+       content : '',
+       _author : ''
+     }
+    }
+  },
+  actions : {
+    postArticle({commit, state}){
+      axios.post('http://localhost:3000/api/article', state.newArticle)
+      .then(function (response) {
+        commit('POST_ARTICLE', response.data)
+      })
+      .catch(function(err) {
+        console.log(err);
+      })
+    }
+
+  },
+  getters : {
+    articles: state => state.articles,
+    newArticle : state => state.newArticle,
+  }
+})
