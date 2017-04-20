@@ -5,8 +5,8 @@ let Articles = {}
   Articles.create = (req, res) => {
     let article = new Model({
       title : req.body.title,
-      content : req.body.content,
-      _author : req.body._author,
+      content : req.body.content
+      // _author : req.body._author
     })
     article.save((err, result) => {
       if(err){
@@ -34,7 +34,7 @@ let Articles = {}
       })
     }
     Articles.getOne = (req, res) => {
-      Model.find({_id : req.params.id}, (err, result) => {
+      Model.find({_id :req.params.id}, (err, result) => {
         if(err){
           res.send(err)
         }else{

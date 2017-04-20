@@ -11,9 +11,6 @@
           <el-form-item label="Content">
             <el-input v-model="newArticle.content"></el-input>
           </el-form-item>
-          <el-form-item label="Author">
-            <el-input v-model="newArticle._author"></el-input>
-          </el-form-item>
         </el-form>
         <el-button type="primary" @click='postArticle()'>Submit</el-button>
       </el-card>
@@ -32,7 +29,8 @@ export default {
   },
   methods : {
     ...mapActions([
-      'postArticle'
+      'postArticle',
+      'getArticles'
     ])
   }
 }
