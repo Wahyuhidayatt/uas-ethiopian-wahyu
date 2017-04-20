@@ -2,6 +2,7 @@
   <div class="">
     <navbar></navbar>
     <form-add></form-add>
+    <card></card>
   </div>
 
 
@@ -10,34 +11,16 @@
 <script>
 import Navbar from './Navbar'
 import FormAdd from './Form'
+import Card from './Card'
 export default {
   components : {
     Navbar,
-    FormAdd
+    FormAdd,
+    Card
   }
 }
 </script>
 
 <style lang="css">
-.text {
-    font-size: 14px;
-  }
 
-  .item {
-    padding: 18px 0;
-  }
-
-  .box-card {
-    width: 480px;
-  }
-  button.el-button.el-button--primary {
-    float: right;
-    margin-bottom: 17px;
-    padding: 12px 48px;
-  }
-  .el-card.box-card {
-    margin-top: 20px;
-    margin-bottom: 30px;
-    margin-left: 350px;
-  }
 </style>
