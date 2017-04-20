@@ -2,7 +2,7 @@
 
 var express = require('express');
 var router = express.Router();
-var userController = require('../controllers/userController');
+// var userController = require('../controllers/userController');
 var Controller = require('../controllers/login_registerController');
 // var DataUsers = require('../helpers/helper')
 
